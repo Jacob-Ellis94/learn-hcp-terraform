@@ -6,13 +6,17 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
+
 data "aws_ami" "ubuntu" {
   most_recent = true
+  owners      = ["099720109477"] # Canonical (official Ubuntu publisher)
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-*-arm64-server-*"]
   }
+}
+
 
   owners = ["099720109477"] # Canonical
 }
