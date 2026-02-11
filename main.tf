@@ -18,9 +18,6 @@ data "aws_ami" "ubuntu" {
 }
 
 
-  owners = ["099720109477"] # Canonical
-}
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.19.0"
